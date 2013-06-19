@@ -13,7 +13,7 @@ namespace Agent.TripleFace
         public static Point Center = new Point(64,64);
         private static Bitmap screen;
         private static ArrayList faces = new ArrayList();
-        private static int index = 1;
+        private static int index = 0;
         private static bool UseMilitaryTime = false;
         private static ArrayList Forecast = new ArrayList();
 
@@ -74,9 +74,9 @@ namespace Agent.TripleFace
             });
             #endregion
 
-            faces.Add(typeof (Calendar));
-            faces.Add(typeof (WatchFace));
-            faces.Add(typeof (WeatherFace));
+            faces.Add(typeof(WatchFace));
+            faces.Add(typeof(WeatherFace));
+            faces.Add(typeof(AnalogFace));
 
             Render();
 
@@ -99,8 +99,8 @@ namespace Agent.TripleFace
                         {                            
                             screen.Clear();
 
-                            screen.DrawRectangle(Color.White, 1, 1, 1, AgentSize, AgentSize, 0, 0,
-                                          Color.Black, 0, 0, Color.Black, 0, 0, 0);
+                            //screen.DrawRectangle(Color.White, 1, 1, 1, AgentSize, AgentSize, 0, 0,
+                            //              Color.Black, 0, 0, Color.Black, 0, 0, 0);
 
                             
                             instance.Render(screen, UseMilitaryTime, Program.Forecast);
@@ -121,21 +121,14 @@ namespace Agent.TripleFace
         {
             if (direction == ButtonDirection.Up)
             {
-                if (button == Buttons.Top)
+                if (button == Buttons.MiddleRight)
                 {
-                    if (index < faces.Count-1)
+                    index++;
+                    if (index > faces.Count - 1)
                     {
-                        index++;
-                        Render();
+                        index = 0;
                     }
-                }
-                else if(button == Buttons.Bottom)
-                {
-                    if (index > 0)
-                    {
-                        index--;
-                        Render();
-                    }
+                    Render();
                 }
 
             }

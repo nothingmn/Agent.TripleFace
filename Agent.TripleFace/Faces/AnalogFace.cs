@@ -6,7 +6,7 @@ using Microsoft.SPOT.Presentation.Media;
 
 namespace Agent.TripleFace.Faces
 {
-    public class Calendar : IFace
+    public class AnalogFace : IFace
     {
         private Font font = Resources.GetFont(Resources.FontResources.small);
         
