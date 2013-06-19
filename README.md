@@ -1,32 +1,5 @@
-Agent.Faces
-===========
+Agent.TripleFace
+================
 
-A set of code which aids in prototyping watch faces for The Agent watch coming out in 2013.
-
-Project Page here:
-http://www.kickstarter.com/projects/secretlabs/agent-the-worlds-smartest-watch
-
-Comments here:
-http://www.kickstarter.com/projects/secretlabs/agent-the-worlds-smartest-watch/comments
-
-Usage
-=====
-
-To create your own WatchFace:
-1. Download the source, make sure it builds
-2. Add a new class in the "Faces" folder
-3. On the source file for the class, and implement the interface Agent.Faces.IFace (there are a few samples you can learn from)
-4. Open Program.cs in the Agent.Faces project and change this line to call your new face:
-5. WatchFace.Start(new MyNewFace());
-
-
-More
-====
-I have embedded three fonts, the two standard .NET Micro framework fonts (NinaB and small).  I also added "BootAntiquqNumbers" which only contains numbers and special characters (not letters); and is a larger font size.
-
-
-
-
-
-
+Agent.TripleFace is a watch face for the Agent smartwatch, which has three faces which you can change by using the top and bottom buttons. Top shows the weather, middle (default) is the current time using a digital face, and the bottom is the current time using an analog face. 
 
